@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eafe5cd05c3a5640aacb6d6362e4b1b, type: 3}
+  m_Name: L2
+  m_EditorClassIdentifier: 
+  levelName: Yggdrasil
+  lore: The denizens of this world are in a perpetual state of war with themselves.
+    There are seventeen sentient species and rampant racism ensures that no two can
+    cohabit. The wars have ravaged ecosystems and the biosphere is on the verge of
+    collapse. 30% of the surface is barren.
+  waves:
+  - {fileID: 11400000, guid: 024fae8928dfc2442986694c9d14a952, type: 2}
+  - {fileID: 11400000, guid: 87f476fdf8b7f9c4291f002cb386a86b, type: 2}
+  - {fileID: 11400000, guid: ce7f7ec3afe488c459f53b85a4eaf952, type: 2}
+  lives: 5
+  credits: 7

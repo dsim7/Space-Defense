@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e022e8dbeda7ee049879fbdba9b6eb8c, type: 3}
+  m_Name: Boomer
+  m_EditorClassIdentifier: 
+  available:
+    _value: 1
+  weaponName: Radiation Bomb
+  description: Detonates a radioactive bomb at the target location, dealing 2 damage
+    to all enemies caught in the blast and irradiating them for 10 seconds. Irradiated
+    enemies take double damage from all sources. 8 second cooldown.
+  icon: {fileID: 21300000, guid: bd58940f92962844da394425ede0d054, type: 3}
+  cooldown: 8
+  hitEffects:
+  - {fileID: 11400000, guid: a0609a215d1a5ee48aef02205dafa727, type: 2}
+  - {fileID: 11400000, guid: dfe2ba8e27ff8bc4bb5dacc1ff98dfb7, type: 2}
+  upgradeSet: {fileID: 0}
+  boomPrefab: {fileID: 8221168805552909656, guid: 79ec21ae00c166a4eb1f8712fb429cfc,
+    type: 3}
+  radius: 4
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
+  lifeTime: 2

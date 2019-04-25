@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4df86d33168a1646840cdbb2bf772b0, type: 3}
+  m_Name: Blaster
+  m_EditorClassIdentifier: 
+  available:
+    _value: 1
+  weaponName: Blaster
+  description: Fire a ball of plasma energy which deals damage to the first enemy
+    it hits.
+  icon: {fileID: 21300000, guid: 7a0d0fcc5d007824d9f08c1e3bea99aa, type: 3}
+  cooldown: 0.8
+  hitEffects:
+  - {fileID: 11400000, guid: 5cd9ce99a7c428845bc474f2424e9ccf, type: 2}
+  upgradeSet: {fileID: 11400000, guid: 48f217274278d884f8c9a5c8b0839411, type: 2}
+  projectilePrefab: {fileID: 6764317752239477814, guid: 198cb60b40323644bad0809da36bdb06,
+    type: 3}
+  projLifetime: 4
+  projSpeed: 30
+  destroyOnImpact: 1

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eafe5cd05c3a5640aacb6d6362e4b1b, type: 3}
+  m_Name: L5
+  m_EditorClassIdentifier: 
+  levelName: Niptuna
+  lore: Most of the natives of Niptuna are amphibious or completely aquatic. 95% of
+    the surface is water. The ecosystems are delicate and very vulnerable to changes
+    in the climate. Volcanic activity beneath the water is frequent and is the cause
+    of the multitude of island chains throughout the planet. Humanoid, sentient elasmobranchs
+    are the dominant species. They have formed structured societies and constructed
+    intricate architecture by shaping coral reefs with tools made of bone.
+  waves:
+  - {fileID: 11400000, guid: b638645d7c44545418e7712f2a730b07, type: 2}
+  - {fileID: 11400000, guid: adcd3f42524e9704f8d4feab55768e4a, type: 2}
+  - {fileID: 11400000, guid: edb242e4d4eb011488f4f5b369a95b38, type: 2}
+  - {fileID: 11400000, guid: 7dcd5cfc379f3b142bb4d1f0d56a4d3c, type: 2}
+  lives: 1
+  credits: 20
