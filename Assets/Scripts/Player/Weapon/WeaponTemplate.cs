@@ -8,13 +8,14 @@ public abstract class WeaponTemplate : ScriptableObject
     public string weaponName;
     [TextArea]
     public string description;
+    public int cost;
     public Sprite icon;
     public float cooldown;
     [SerializeField]
     List<OnHitEffector> hitEffects;
 
     [Space]
-    public UpgradeSet upgradeSet;
+    public Upgrade upgradeSet;
 
     public abstract void Fire(Transform origin, Vector2 destination, Transform bulletsTransform);
     

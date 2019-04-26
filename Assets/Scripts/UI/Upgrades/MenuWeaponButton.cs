@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class MenuWeaponButton : MonoBehaviour
 {
+    Image _image;
+    Image image {  get { if (_image == null) _image = GetComponent<Image>(); return _image; } }
+
     [SerializeField]
     WeaponTemplate _weapon;
     public WeaponTemplate weapon { get { return _weapon; } set { _weapon = value; UpdateWeapon(); } }
     public WeaponTemplateVariable inspectedWeapon;
-    public Image image;
+    public Image icon;
+    [Space]
+    public Color unavailableColor;
     
     void Start()
     {
@@ -20,7 +25,11 @@ public class MenuWeaponButton : MonoBehaviour
     {
         if (weapon != null)
         {
-            image.sprite = weapon.icon;
+            icon.sprite = weapon.icon;
+            if (!weapon.available.Value)
+            {
+                image.color = unavailableColor;
+            }
         }
     }
 

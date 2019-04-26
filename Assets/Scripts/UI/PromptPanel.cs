@@ -6,20 +6,25 @@ using UnityEngine.UI;
 
 public class PromptPanel : MonoBehaviour
 {
-    UnityAction promptedAction;
+    UnityEvent promptedAction = new UnityEvent();
 
     public void Prompt(UnityAction yesAction)
     {
-        promptedAction = yesAction;
+        promptedAction.AddListener(yesAction);
         gameObject.SetActive(true);
     }
     
-    public void DoPromptedAction()
+    public void Accept()
     {
         if (promptedAction != null)
         {
             promptedAction.Invoke();
         }
-        promptedAction = null;
+        promptedAction.RemoveAllListeners();
+    }
+
+    public void Decline()
+    {
+        promptedAction.RemoveAllListeners();
     }
 }

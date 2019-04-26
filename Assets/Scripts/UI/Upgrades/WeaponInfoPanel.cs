@@ -8,25 +8,72 @@ public class WeaponInfoPanel : MonoBehaviour
 {
     public WeaponTemplateVariable inspectedWeapon;
 
-    public Text weaponName, info;
-    public Image icon;
-    public UpgradeView upgradeView;
+    public Text weaponName, info, backButtonText;
+    public Image icon, background;
+    [Space]
+    public Color availableBGColor;
+    public Color availableTextColor, unavailableBGColor, unavailableTextColor;
+    [Space]
+    public BlackMask mask;
+    public float fadeOutAmount;
 
     void Start()
     {
         inspectedWeapon.RegisterPostchangeEvent(UpdateInfo);
+        inspectedWeapon.Value = null;
+
+        inspectedWeapon.RegisterPostchangeEvent(UpdateColors);
+        inspectedWeapon.RegisterPrechangeEvent(UnobserveWeaponAvailable);
+        inspectedWeapon.RegisterPostchangeEvent(ObserveWeaponAvailable);
+
         gameObject.SetActive(false);
+    }
+
+    void ObserveWeaponAvailable()
+    {
+        if (inspectedWeapon.Value != null)
+        {
+            inspectedWeapon.Value.available.RegisterPostchangeEvent(UpdateColors);
+            UpdateColors();
+        }
+    }
+
+    void UnobserveWeaponAvailable()
+    {
+        if (inspectedWeapon.Value != null)
+        {
+            inspectedWeapon.Value.available.UnregisterPostchangeEvent(UpdateColors);
+        }
     }
 
     void UpdateInfo()
     {
-        gameObject.SetActive(true);
-        if (inspectedWeapon.Value != null)
+        if (inspectedWeapon.Value != null && !gameObject.activeSelf)
         {
+            gameObject.SetActive(true);
+            mask.FadeOutPartial(fadeOutAmount);
+
             weaponName.text = GetBoldedWeaponName();
             info.text = inspectedWeapon.Value.description;
             icon.sprite = inspectedWeapon.Value.icon;
-            upgradeView.upgradeSet = inspectedWeapon.Value.upgradeSet;
+        }
+    }
+
+    void UpdateColors()
+    {
+        if (inspectedWeapon.Value.available.Value)
+        {
+            background.color = availableBGColor;
+            weaponName.color = availableTextColor;
+            info.color = availableTextColor;
+            backButtonText.color = availableTextColor;
+        }
+        else
+        {
+            background.color = unavailableBGColor;
+            weaponName.color = unavailableTextColor;
+            info.color = unavailableTextColor;
+            backButtonText.color = unavailableTextColor;
         }
     }
 

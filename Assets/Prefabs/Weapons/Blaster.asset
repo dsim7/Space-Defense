@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldown: 0.8
   hitEffects:
   - {fileID: 11400000, guid: 5cd9ce99a7c428845bc474f2424e9ccf, type: 2}
-  upgradeSet: {fileID: 11400000, guid: 48f217274278d884f8c9a5c8b0839411, type: 2}
+  upgradeSet: {fileID: 11400000, guid: a18d47027dc965e4889c376595f2e55e, type: 2}
   projectilePrefab: {fileID: 6764317752239477814, guid: 198cb60b40323644bad0809da36bdb06,
     type: 3}
   projLifetime: 4

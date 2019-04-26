@@ -22,7 +22,7 @@ public class ShipShooter : MonoBehaviour
         //    if (touch.phase == TouchPhase.Began)
         //    {
         //        Vector2 dest = cam.ScreenToWorldPoint(touch.position);
-        //        currentWeapon.Value.Fire(transform, dest, bulletsTransform);
+        //        currentWeapon.Value.Fire(transform, dest);
         //    }
         //}
 

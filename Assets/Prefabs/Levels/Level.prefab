@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a15ccfe7e3db274cb028e0e1c7ea3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: {fileID: 11400000, guid: 863c9b2b3e8559f49b9d7ed1b6295fb8, type: 2}
-  levelToSelect: {fileID: 0}
+  inspectedLevel: {fileID: 11400000, guid: 863c9b2b3e8559f49b9d7ed1b6295fb8, type: 2}
+  level: {fileID: 0}

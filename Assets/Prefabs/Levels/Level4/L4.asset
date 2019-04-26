@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eafe5cd05c3a5640aacb6d6362e4b1b, type: 3}
   m_Name: L4
   m_EditorClassIdentifier: 
+  available:
+    _value: 0
   levelName: Velos
   lore: The denizens of this world have advanced technologies, including space travel.
     Despite this, they suffer from overpopulation. They are recovering from centuries
@@ -23,4 +25,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: edb242e4d4eb011488f4f5b369a95b38, type: 2}
   - {fileID: 11400000, guid: 7dcd5cfc379f3b142bb4d1f0d56a4d3c, type: 2}
   lives: 1
-  credits: 15
+  difficulty: 4
+  creditsEarned: 0
+  unlockedLevels:
+  - {fileID: 11400000, guid: f48918324da58344ca11c1a4feee7be1, type: 2}
+  rewardsDescription: 'Credits: +800
+
+    Unlocked Planet: Niptuna'
+  credits: {fileID: 11400000, guid: 1d6a9e41bd962ad4dbad9cf332dc96f9, type: 2}

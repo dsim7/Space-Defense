@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EndZone : MonoBehaviour
 {
-    public IntVariable lives;
+    public IntVariableSO lives;
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("collide");
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemies"))

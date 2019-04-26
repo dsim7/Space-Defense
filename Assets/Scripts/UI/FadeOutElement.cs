@@ -7,17 +7,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(CanvasGroup))]
 public class FadeOutElement : MonoBehaviour
 {
-    CanvasGroup cg;
+    CanvasGroup _cg;
+    CanvasGroup cg { get { if (_cg == null) { _cg = GetComponent<CanvasGroup>(); } return _cg; } set { _cg = value; } }
 
     float targetAlpha = 1;
     UnityEvent thenEvent = new UnityEvent();
     
     public float fadeRate = 1;
-
-    void Awake()
-    {
-        cg = GetComponent<CanvasGroup>();
-    }
 
     void Update()
     {
@@ -25,10 +21,6 @@ public class FadeOutElement : MonoBehaviour
         {
             thenEvent.Invoke();
             thenEvent.RemoveAllListeners();
-            if (cg.alpha == 0)
-            {
-                gameObject.SetActive(false);
-            }
         }
         else
         {
@@ -49,6 +41,7 @@ public class FadeOutElement : MonoBehaviour
 
     public void FadeOut(UnityAction then)
     {
+        Enable();
         targetAlpha = 0;
         cg.interactable = false;
 
@@ -56,18 +49,29 @@ public class FadeOutElement : MonoBehaviour
         {
             thenEvent.AddListener(then);
         }
+        thenEvent.AddListener(Disable);
     }
 
     public void FadeIn(UnityAction then)
     {
+        Enable();
         targetAlpha = 1;
-        gameObject.SetActive(true);
         cg.interactable = true;
 
         if (then != null)
         {
             thenEvent.AddListener(then);
         }
+    }
+
+    void Enable()
+    {
+        gameObject.SetActive(true);
+    }
+
+    void Disable()
+    {
+        gameObject.SetActive(false);
     }
     
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a4941c54ce0d74483a871a764de557, type: 3}
   m_Name: ShockLanceOnHitDamage
   m_EditorClassIdentifier: 
-  damageAmount: 3
+  damageAmount: 2

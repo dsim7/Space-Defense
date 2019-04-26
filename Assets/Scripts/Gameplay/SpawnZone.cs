@@ -12,9 +12,9 @@ public class SpawnZone : MonoBehaviour
 
     public LevelVariable currentLevel;
     public Transform enemiesTransform;
-    public IntVariable lives;
+    public IntVariableSO lives;
     [Space]
-    public Text infoText;
+    public Text infoText, subInfoText;
     [Space]
     public BlackMask mask;
 
@@ -25,7 +25,10 @@ public class SpawnZone : MonoBehaviour
         mask.fadeRate = 0.5f;
 
         // Listen to lives
-        lives.Value = currentLevel.Value.lives;
+        if (currentLevel.Value != null)
+        {
+            lives.Value = currentLevel.Value.lives;
+        }
         lives.RegisterPostchangeEvent(CheckGameOverOrComplete);
     }
 
@@ -37,8 +40,11 @@ public class SpawnZone : MonoBehaviour
 
     void StartWave()
     {
-        Wave waveToStart = currentLevel.Value.waves[currentWaveIndex];
-        StartCoroutine(waveToStart.Spawn(this, enemiesTransform, NextWave));
+        if (currentLevel.Value != null)
+        {
+            Wave waveToStart = currentLevel.Value.waves[currentWaveIndex];
+            StartCoroutine(waveToStart.Spawn(this, enemiesTransform, NextWave));
+        }
     }
 
     void NextWave()
@@ -84,22 +90,40 @@ public class SpawnZone : MonoBehaviour
 
     void GameOver()
     {
-        infoText.text = "GAME OVER";
-        infoText.color = Color.red;
-        infoText.gameObject.SetActive(true);
         Time.timeScale = 0.2f;
+
+        StartCoroutine(FailLevelCoroutine());
+
         mask.fadeRate = 1f;
         mask.FadeOut(ReturnToMenu);
     }
 
     void Complete()
     {
+        Time.timeScale = 0.2f;
+
+        StartCoroutine(CompleteLevelCoroutine());
+        
+        mask.fadeRate = 1f;
+        mask.FadeOut(ReturnToMenu);
+    }
+
+    IEnumerator FailLevelCoroutine()
+    {
+        infoText.text = "FAILED";
+        infoText.color = Color.red;
+        infoText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+    }
+
+    IEnumerator CompleteLevelCoroutine()
+    {
         infoText.text = "COMPLETE";
         infoText.color = Color.white;
         infoText.gameObject.SetActive(true);
-        Time.timeScale = 0.2f;
-        mask.fadeRate = 1f;
-        mask.FadeOut(ReturnToMenu);
+        subInfoText.text = currentLevel.Value.rewardsDescription;
+        currentLevel.Value.Award();
+        yield return new WaitForSeconds(1);
     }
 
     void ReturnToMenu()

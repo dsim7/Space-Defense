@@ -6,7 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CanvasGroup))]
 public class BlackMask : MonoBehaviour
 {
-    CanvasGroup cg;
+    CanvasGroup _cg;
+    CanvasGroup cg { get { if (_cg == null) { _cg = GetComponent<CanvasGroup>(); } return _cg; } set { _cg = value; } }
 
     float alphaTarget = 0;
     UnityEvent thenEvent = new UnityEvent();
@@ -15,7 +16,6 @@ public class BlackMask : MonoBehaviour
 
     void Awake()
     {
-        cg = GetComponent<CanvasGroup>();
         cg.blocksRaycasts = true;
     }
 
@@ -32,8 +32,14 @@ public class BlackMask : MonoBehaviour
         }
     }
 
-    public void FadeOut(UnityAction then = null)
+    public void FadeOut()
     {
+        FadeOut(null);
+    }
+
+    public void FadeOut(UnityAction then)
+    {
+        Enable();
         alphaTarget = 1;
         cg.blocksRaycasts = true;
 
@@ -43,8 +49,31 @@ public class BlackMask : MonoBehaviour
         }
     }
 
-    public void FadeIn(UnityAction then = null)
+    public void FadeOutPartial(float amount)
     {
+        FadeOutPartial(amount, null);
+    }
+
+    public void FadeOutPartial(float amount, UnityAction then)
+    {
+        Enable();
+        alphaTarget = amount;
+        cg.blocksRaycasts = true;
+
+        if (then != null)
+        {
+            thenEvent.AddListener(then);
+        }
+    }
+
+    public void FadeIn()
+    {
+        FadeIn(null);
+    }
+
+    public void FadeIn(UnityAction then)
+    {
+        Enable();
         alphaTarget = 0;
         cg.blocksRaycasts = false;
 
@@ -52,6 +81,17 @@ public class BlackMask : MonoBehaviour
         {
             thenEvent.AddListener(then);
         }
+        thenEvent.AddListener(Disable);
+    }
+
+    void Disable()
+    {
+        gameObject.SetActive(false);
+    }
+
+    void Enable()
+    {
+        gameObject.SetActive(true);
     }
 
 }

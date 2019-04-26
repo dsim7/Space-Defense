@@ -5,80 +5,118 @@ using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
 {
-    [SerializeField]
-    UpgradePlusIcon[] pluses;
-
-    [SerializeField]
-    UpgradeSet _upgradeSet;
-    public UpgradeSet upgradeSet
-    {
-        get { return _upgradeSet; }
-
-        set
-        {
-            _upgradeSet = value;
-            ToggleButton();
-            SetUpPluses();
-        }
-    }
-
+    public WeaponTemplateVariable inspectedWeapon;
+    [Space]
+    public List<Image> pluses;
     public Button upgradeButton;
-    public Transform plusesPanel;
-    public PromptPanel prompt;
+    [Space]
+    public Color upgradedColor;
+    public Color unupgradedColor;
 
     void Start()
     {
-        ToggleButton();
+        inspectedWeapon.RegisterPostchangeEvent(UpdateInfo);
+        inspectedWeapon.RegisterPrechangeEvent(UnobserveWeaponUpgradeLevel);
+        inspectedWeapon.RegisterPostchangeEvent(ObserveWeaponUpgradeLevel);
     }
 
-    public void PromptUpgrade()
+    void ObserveWeaponUpgradeLevel()
     {
-        prompt.Prompt(DoUpgrade);
-    }
-
-    void DoUpgrade()
-    {
-        if (_upgradeSet != null)
+        if (inspectedWeapon.Value != null && inspectedWeapon.Value.upgradeSet != null)
         {
-            _upgradeSet.Upgrade(1);
-            ToggleButton();
+            inspectedWeapon.Value.upgradeSet.level.RegisterPostchangeEvent(UpdateInfo);
+            UpdateInfo();
         }
     }
 
-    void SetUpPluses()
+    void UnobserveWeaponUpgradeLevel()
     {
-        if (upgradeSet == null)
+        if (inspectedWeapon.Value != null && inspectedWeapon.Value.upgradeSet != null)
         {
-            foreach (UpgradePlusIcon plus in pluses)
-            {
-                plus.gameObject.SetActive(false);
-            }
-            return;
-        }
-
-        for (int i = 0; i < pluses.Length; i++)
-        {
-            if (i < upgradeSet.upgrades.Count)
-            {
-                pluses[i].gameObject.SetActive(true);
-                pluses[i].upgrade = upgradeSet.upgrades[i];
-            }
-            else
-            {
-                pluses[i].gameObject.SetActive(false);
-            }
+            inspectedWeapon.Value.upgradeSet.level.UnregisterPostchangeEvent(UpdateInfo);
         }
     }
 
-    void ToggleButton()
+    void UpdateInfo()
     {
-        if (_upgradeSet == null || !_upgradeSet.HasMoreUpgrades())
+        if (inspectedWeapon.Value != null && inspectedWeapon.Value.upgradeSet != null) 
         {
-            upgradeButton.gameObject.SetActive(false);
+            gameObject.SetActive(true);
+            Upgrade upgrade = inspectedWeapon.Value.upgradeSet;
+            UpdatePluses(upgrade);
+            UpdateButton(upgrade);
         }
         else
         {
-            upgradeButton.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
+
+    void UpdatePluses(Upgrade upgrade)
+    {
+        int upgradeLevel = upgrade.level.Value;
+
+        for (int i = 0; i < pluses.Count; i++)
+        {
+            bool shouldFill = i + 1 <= upgradeLevel;
+            pluses[i].color = shouldFill ? upgradedColor : unupgradedColor;
+        }
+    }
+
+    void UpdateButton(Upgrade upgrade)
+    {
+        upgradeButton.gameObject.SetActive(upgrade != null && upgrade.CanUpgrade());
+    }
+
+    //[SerializeField]
+    //Upgrade _upgrade;
+    //public Upgrade upgradeSet
+    //{
+    //    get { return _upgrade; }
+
+    //    set
+    //    {
+    //        _upgrade = value;
+    //        ToggleButton();
+    //        SetUpPluses();
+    //    }
+    //}
+
+    //[Space]
+    //[SerializeField]
+    //Image[] pluses;
+    //public Button upgradeButton;
+    //public Transform plusesPanel;
+    //public PromptPanel prompt;
+
+    ////void Start()
+    ////{
+    ////    ToggleButton();
+    ////}
+
+    //public void PromptUpgrade()
+    //{
+    //    prompt.Prompt(DoUpgrade);
+    //}
+
+    //void DoUpgrade()
+    //{
+    //    if (_upgrade != null)
+    //    {
+    //        _upgrade.DoUpgrade();
+    //        ToggleButton();
+    //    }
+    //}
+
+    //void ToggleButton()
+    //{
+    //    if (_upgrade == null || !_upgrade.HasMoreUpgrades())
+    //    {
+    //        upgradeButton.gameObject.SetActive(false);
+    //    }
+    //    else
+    //    {
+    //        upgradeButton.gameObject.SetActive(true);
+    //    }
+    //}
 }

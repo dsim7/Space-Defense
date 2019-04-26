@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: ShockLance
   m_EditorClassIdentifier: 
   available:
-    _value: 1
+    _value: 0
   weaponName: Shock Lance
   description: Fire a laser of high-powered ionizing energy, dealing 2 damage to all
     enemies it hits and slowing them for 6 seconds. 3 second cooldown.
+  cost: 1500
   icon: {fileID: 21300000, guid: 47952a56291f567489cb1e6462b599e4, type: 3}
   cooldown: 3
   hitEffects:
   - {fileID: 11400000, guid: 19690017c9a1ec4499da6c7a743f3c9e, type: 2}
   - {fileID: 11400000, guid: 5071f16eff7ab8b4097b259f0cc85fb7, type: 2}
-  upgradeSet: {fileID: 11400000, guid: 9fe2d1ed1c5a05d4a9de21b7c90a639c, type: 2}
+  upgradeSet: {fileID: 11400000, guid: caeafc4998e14fa4a9a9204acfdc8fff, type: 2}
   lancePrefab: {fileID: 3511885884037891942, guid: 755fdf8c42af38043a92735f81cc4947,
     type: 3}
   lifeTime: 0.4

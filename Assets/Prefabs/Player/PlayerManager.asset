@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bf677d8b7ff0940b56dcd5c6130a64, type: 3}
   m_Name: PlayerManager
   m_EditorClassIdentifier: 
-  credits: 1000
+  credits: 0
   weapons:
   - {fileID: 11400000, guid: f837d99ced0be224f86024010f45fb6c, type: 2}
   - {fileID: 11400000, guid: 1634b703f291f004cb177ff3c6bdddc8, type: 2}

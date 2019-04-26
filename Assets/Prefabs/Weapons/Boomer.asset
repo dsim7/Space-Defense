@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: Boomer
   m_EditorClassIdentifier: 
   available:
-    _value: 1
+    _value: 0
   weaponName: Radiation Bomb
   description: Detonates a radioactive bomb at the target location, dealing 2 damage
     to all enemies caught in the blast and irradiating them for 10 seconds. Irradiated
     enemies take double damage from all sources. 8 second cooldown.
+  cost: 1500
   icon: {fileID: 21300000, guid: bd58940f92962844da394425ede0d054, type: 3}
   cooldown: 8
   hitEffects:
   - {fileID: 11400000, guid: a0609a215d1a5ee48aef02205dafa727, type: 2}
   - {fileID: 11400000, guid: dfe2ba8e27ff8bc4bb5dacc1ff98dfb7, type: 2}
-  upgradeSet: {fileID: 0}
+  upgradeSet: {fileID: 11400000, guid: 56476f6cc149604459dddf7fc3a3b5f3, type: 2}
   boomPrefab: {fileID: 8221168805552909656, guid: 79ec21ae00c166a4eb1f8712fb429cfc,
     type: 3}
   radius: 4

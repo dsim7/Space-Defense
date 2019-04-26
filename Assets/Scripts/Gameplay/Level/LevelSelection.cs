@@ -7,11 +7,9 @@ public class LevelSelection : MonoBehaviour
     Camera mainCamera;
 
     public LevelVariable currentLevel;
-    public GameObject playLevelPrompt;
 
     void Start()
     {
-        Time.timeScale = 1;
         mainCamera = Camera.main;
     }
 
@@ -19,13 +17,12 @@ public class LevelSelection : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100f))
+        if (Physics.Raycast(ray, out hit, 1000f))
         {
-            LevelSelector level = hit.transform.GetComponent<LevelSelector>();
-            if (level != null)
+            Planet levelSelector = hit.collider.GetComponent<Planet>();
+            if (levelSelector != null)
             {
-                currentLevel.Value = level.levelToSelect;
-                playLevelPrompt.GetComponent<FadeOutElement>().FadeIn();
+                currentLevel.Value = levelSelector.level;
             }
         }
     }   

@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public abstract class Upgrade : ScriptableObject
+[CreateAssetMenu]
+public class Upgrade : ScriptableObject
 {
-    public BoolVariable acquired;
+    public IntVariable level;
+    public int maxLevel = 3;
+    public int[] levelCosts;
+    public string[] levelDescriptions;
 
     public void DoUpgrade()
     {
-        acquired.Value = true;
-        UpgradeEffect();
+        if (CanUpgrade())
+        {
+            level.Value++;
+        }
     }
 
-    protected abstract void UpgradeEffect();
-
-    protected abstract void Reverse();
-} 
-
-public abstract class WeaponUpgrade<T> : Upgrade
-{
-    public T upgradedThing;
+    public bool CanUpgrade()
+    {
+        return level.Value < maxLevel;
+    }
 }

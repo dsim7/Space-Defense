@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: Beam
   m_EditorClassIdentifier: 
   available:
-    _value: 1
+    _value: 0
   weaponName: Beam
   description: Fire a concentrated bolt of plasma which travels through enemies, dealing
     5 damage. 6 second cooldown.
+  cost: 500
   icon: {fileID: 21300000, guid: 47952a56291f567489cb1e6462b599e4, type: 3}
   cooldown: 6
   hitEffects:
   - {fileID: 11400000, guid: cd95a06999159c14b9b17ba1dd0b97e8, type: 2}
-  upgradeSet: {fileID: 0}
+  upgradeSet: {fileID: 11400000, guid: a4db24e0cdb26bf4eb9721a94c20a8f9, type: 2}
   projectilePrefab: {fileID: 886395851934113565, guid: 5c8cda4dea4b7604385a1cbd59207614,
     type: 3}
   projLifetime: 4
