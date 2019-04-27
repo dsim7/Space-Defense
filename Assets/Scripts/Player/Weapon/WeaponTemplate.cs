@@ -15,7 +15,7 @@ public abstract class WeaponTemplate : ScriptableObject
     List<OnHitEffector> hitEffects;
 
     [Space]
-    public Upgrade upgradeSet;
+    public Upgrade upgrade;
 
     public abstract void Fire(Transform origin, Vector2 destination, Transform bulletsTransform);
     

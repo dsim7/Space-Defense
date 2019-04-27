@@ -25,6 +25,7 @@ public abstract class ObservedSOVariable<T> : ScriptableObject
     public void RegisterPostchangeEvent(UnityAction action)
     {
         _postchangeEvent.AddListener(action);
+        action.Invoke();
     }
 
     public void UnregisterPostchangeEvent(UnityAction action)

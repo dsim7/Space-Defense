@@ -9,6 +9,8 @@ public class ShipShooter : MonoBehaviour
 
     public WeaponVariable currentWeapon;
     public Transform bulletsTransform;
+    [Space]
+    public bool canShoot;
 
     void Start()
     {
@@ -17,18 +19,20 @@ public class ShipShooter : MonoBehaviour
 
     public void ShootAtMouse()
     {
-        //foreach (Touch touch in Input.touches)
-        //{
-        //    if (touch.phase == TouchPhase.Began)
-        //    {
-        //        Vector2 dest = cam.ScreenToWorldPoint(touch.position);
-        //        currentWeapon.Value.Fire(transform, dest);
-        //    }
-        //}
+        if (canShoot)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Vector2 dest = cam.ScreenToWorldPoint(touch.position);
+                    currentWeapon.Value.Use(transform, dest);
+                }
+            }
 
-        Vector2 dest = cam.ScreenToWorldPoint(Input.mousePosition);
+            //Vector2 dest = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        currentWeapon.Value.Use(transform, dest);
-
+            //currentWeapon.Value.Use(transform, dest);
+        }
     }
 }

@@ -17,6 +17,6 @@ MonoBehaviour:
   maxLevel: 3
   levelCosts: c800000058020000dc050000
   levelDescriptions:
+  - Plus 1 Damage.
   - Plus 2 Damage.
-  - Plus 4 Damage.
-  - Plus 7 Damage
+  - Plus 3 Damage

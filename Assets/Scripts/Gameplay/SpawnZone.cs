@@ -11,12 +11,13 @@ public class SpawnZone : MonoBehaviour
     bool wavesCompleted;
 
     public LevelVariable currentLevel;
-    public Transform enemiesTransform;
     public IntVariableSO lives;
     [Space]
-    public Text infoText, subInfoText;
-    [Space]
+    public Transform enemiesTransform;
+    public InLevelTextDisplay infoText;
     public BlackMask mask;
+    [Space]
+    public PlayerManager playerSave;
 
     void Start()
     {
@@ -28,8 +29,8 @@ public class SpawnZone : MonoBehaviour
         if (currentLevel.Value != null)
         {
             lives.Value = currentLevel.Value.lives;
+            lives.RegisterPostchangeEvent(CheckGameOverOrComplete);
         }
-        lives.RegisterPostchangeEvent(CheckGameOverOrComplete);
     }
 
     public void StartLevel()
@@ -110,19 +111,18 @@ public class SpawnZone : MonoBehaviour
 
     IEnumerator FailLevelCoroutine()
     {
-        infoText.text = "FAILED";
-        infoText.color = Color.red;
-        infoText.gameObject.SetActive(true);
+        infoText.ShowFail();
         yield return new WaitForSeconds(0.2f);
     }
 
     IEnumerator CompleteLevelCoroutine()
     {
-        infoText.text = "COMPLETE";
-        infoText.color = Color.white;
-        infoText.gameObject.SetActive(true);
-        subInfoText.text = currentLevel.Value.rewardsDescription;
+        infoText.ShowSuccess();
         currentLevel.Value.Award();
+
+        // Save
+        playerSave.Save();
+
         yield return new WaitForSeconds(1);
     }
 

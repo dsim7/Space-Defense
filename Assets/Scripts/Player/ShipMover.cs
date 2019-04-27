@@ -13,6 +13,11 @@ public class ShipMover : MonoBehaviour
     float thrust = 4f;
     [SerializeField]
     float dragScale = 0.98f;
+    [SerializeField]
+    float upgradeBonus;
+
+    [Space]
+    public Upgrade speedUpgrade;
     
     void Start()
     {
@@ -26,7 +31,8 @@ public class ShipMover : MonoBehaviour
         float yAxis = CrossPlatformInputManager.GetAxis("Vertical");
         if (xAxis != 0 && yAxis != 0)
         {
-            rb.AddForce(new Vector2(xAxis, yAxis) * thrust);
+            float realThrust = thrust + (upgradeBonus * speedUpgrade.level.Value);
+            rb.AddForce(new Vector2(xAxis, yAxis) * realThrust);
         }
         rb.velocity *= dragScale;
     }

@@ -13,12 +13,13 @@ public class WeaponBarManager : MonoBehaviour
 
     void Start()
     {
-        foreach (WeaponTemplate template in playerManager.weapons)
+        List<WeaponTemplate> weaponTemplates = playerManager.weapons;
+        for (int i = weaponTemplates.Count - 1; i >= 0; i--)
         {
-            if (template.available.Value)
+            if (weaponTemplates[i].available.Value)
             {
                 WeaponButton button = Instantiate(weaponButtonPrefab, hotBar).GetComponent<WeaponButton>();
-                button.weapon = new Weapon(template, bulletsTransform);
+                button.weapon = new Weapon(weaponTemplates[i], bulletsTransform);
                 weapons.Add(button.weapon);
             }
         }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf58b76893ffd8409428b4d9a7568f7, type: 3}
   m_Name: Credits
   m_EditorClassIdentifier: 
-  _value: 200
+  _value: 0

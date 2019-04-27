@@ -15,13 +15,14 @@ MonoBehaviour:
   available:
     _value: 1
   weaponName: Blaster
-  description: Fire a ball of plasma energy which deals damage to the first enemy
-    it hits.
+  description: Fire a ball of plasma energy which deals 3 damage to the first enemy
+    it hits. Very short cooldown.
+  cost: 0
   icon: {fileID: 21300000, guid: 7a0d0fcc5d007824d9f08c1e3bea99aa, type: 3}
   cooldown: 0.8
   hitEffects:
   - {fileID: 11400000, guid: 5cd9ce99a7c428845bc474f2424e9ccf, type: 2}
-  upgradeSet: {fileID: 11400000, guid: a18d47027dc965e4889c376595f2e55e, type: 2}
+  upgrade: {fileID: 11400000, guid: a18d47027dc965e4889c376595f2e55e, type: 2}
   projectilePrefab: {fileID: 6764317752239477814, guid: 198cb60b40323644bad0809da36bdb06,
     type: 3}
   projLifetime: 4

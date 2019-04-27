@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eafe5cd05c3a5640aacb6d6362e4b1b, type: 3}
+  m_Name: L4
+  m_EditorClassIdentifier: 
+  available:
+    _value: 0
+  levelName: Velos
+  lore: The denizens of this world have advanced technologies, including space travel.
+    Despite this, they suffer from overpopulation. They are recovering from centuries
+    of irresponsible resource consumption and many of the ecosystems of this planet
+    are beyond saving.
+  waves:
+  - {fileID: 11400000, guid: b638645d7c44545418e7712f2a730b07, type: 2}
+  - {fileID: 11400000, guid: adcd3f42524e9704f8d4feab55768e4a, type: 2}
+  - {fileID: 11400000, guid: edb242e4d4eb011488f4f5b369a95b38, type: 2}
+  - {fileID: 11400000, guid: 7dcd5cfc379f3b142bb4d1f0d56a4d3c, type: 2}
+  lives: 1
+  difficulty: 4
+  creditsEarned: 800
+  unlockedLevels:
+  - {fileID: 11400000, guid: f48918324da58344ca11c1a4feee7be1, type: 2}
+  rewardsDescription: 'Credits: +800
+
+    Unlocked Planet: Niptuna'
+  credits: {fileID: 11400000, guid: 1d6a9e41bd962ad4dbad9cf332dc96f9, type: 2}

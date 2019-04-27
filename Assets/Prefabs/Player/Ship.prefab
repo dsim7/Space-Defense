@@ -175,6 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 8
   dragScale: 0.98
+  upgradeBonus: 2.5
+  speedUpgrade: {fileID: 11400000, guid: 3206b6d27aa694842afd21edaa2ef10e, type: 2}
 --- !u!114 &7229250971226373825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +191,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 11400000, guid: 9c6aefa062430eb4d8cf8e9aaa1153e0, type: 2}
   bulletsTransform: {fileID: 0}
+  canShoot: 0

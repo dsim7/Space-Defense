@@ -12,10 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bf677d8b7ff0940b56dcd5c6130a64, type: 3}
   m_Name: PlayerManager
   m_EditorClassIdentifier: 
-  credits: 0
+  credits: {fileID: 11400000, guid: 1d6a9e41bd962ad4dbad9cf332dc96f9, type: 2}
   weapons:
-  - {fileID: 11400000, guid: f837d99ced0be224f86024010f45fb6c, type: 2}
-  - {fileID: 11400000, guid: 1634b703f291f004cb177ff3c6bdddc8, type: 2}
-  - {fileID: 11400000, guid: 266fce4a68ade2942a0bf68c1bd648a0, type: 2}
   - {fileID: 11400000, guid: 6a70b33ccf5771740a3249917a5bc5ae, type: 2}
-  upgrades: []
+  - {fileID: 11400000, guid: 266fce4a68ade2942a0bf68c1bd648a0, type: 2}
+  - {fileID: 11400000, guid: 1634b703f291f004cb177ff3c6bdddc8, type: 2}
+  - {fileID: 11400000, guid: f837d99ced0be224f86024010f45fb6c, type: 2}
+  upgrades:
+  - {fileID: 11400000, guid: a4db24e0cdb26bf4eb9721a94c20a8f9, type: 2}
+  - {fileID: 11400000, guid: a18d47027dc965e4889c376595f2e55e, type: 2}
+  - {fileID: 11400000, guid: 56476f6cc149604459dddf7fc3a3b5f3, type: 2}
+  - {fileID: 11400000, guid: 3206b6d27aa694842afd21edaa2ef10e, type: 2}
+  - {fileID: 11400000, guid: caeafc4998e14fa4a9a9204acfdc8fff, type: 2}
+  levels:
+  - {fileID: 11400000, guid: 758ed633258e8d649a00a1146fcab7de, type: 2}
+  - {fileID: 11400000, guid: eb694b14d52011e4a9bf911c858fc446, type: 2}
+  - {fileID: 11400000, guid: 07a0c59120dd5da4b94674f874e0e61d, type: 2}
+  - {fileID: 11400000, guid: 11b526720eef436499607aed000643a2, type: 2}
+  - {fileID: 11400000, guid: f48918324da58344ca11c1a4feee7be1, type: 2}

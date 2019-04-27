@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885f881e03c5acb48a113bde5b21eb44, type: 3}
   m_Name: SlowStatus
   m_EditorClassIdentifier: 
-  duration: 6
+  duration: 8
   sfxPrefab: {fileID: 2963895120137217584, guid: 260daaec6a22e1343a416699a6667762,
     type: 3}
   slowAmount: 0.5
