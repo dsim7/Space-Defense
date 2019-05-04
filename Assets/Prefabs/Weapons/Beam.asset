@@ -18,7 +18,7 @@ MonoBehaviour:
   description: Fire a concentrated bolt of plasma which travels through enemies, dealing
     4 damage. 7 second cooldown.
   cost: 500
-  icon: {fileID: 21300000, guid: 47952a56291f567489cb1e6462b599e4, type: 3}
+  icon: {fileID: 21300000, guid: 7a0d0fcc5d007824d9f08c1e3bea99aa, type: 3}
   cooldown: 7
   hitEffects:
   - {fileID: 11400000, guid: cd95a06999159c14b9b17ba1dd0b97e8, type: 2}

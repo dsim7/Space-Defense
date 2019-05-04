@@ -654,7 +654,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.38470095, g: 0.8584906, b: 0.38470095, a: 1}
-  m_Intensity: 8.55
+  m_Intensity: 6
   m_Range: 10
   m_SpotAngle: 110.8
   m_CookieSize: 10
@@ -688,13 +688,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137804059}
-  m_LocalRotation: {x: 0.37907678, y: 0.4266397, z: -0.25635654, w: 0.780103}
+  m_LocalRotation: {x: 0.37668145, y: 0.42875624, z: -0.25198346, w: 0.78152645}
   m_LocalPosition: {x: 6.6177187, y: 81.67359, z: -174.72838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 516491861}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 54.114002, y: 53.514004, z: -7.5000005}
+  m_LocalEulerAnglesHint: {x: 53.596, y: 54.033, z: -6.8570004}
 --- !u!1001 &140128605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1272,7 +1272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ac376b08137d746b93f89873c7b097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seenIntro: {fileID: 11400000, guid: d7fa73208b523be449575432c722980d, type: 2}
   blackMask: {fileID: 107896310}
   cameraTarget: {fileID: 1741663114}
   entryTarget: {fileID: 884071119}
@@ -5038,7 +5037,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.8083922, b: 0, a: 1}
-  m_Intensity: 6.5
+  m_Intensity: 5
   m_Range: 18.48
   m_SpotAngle: 58.6
   m_CookieSize: 10
@@ -5072,13 +5071,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398756915}
-  m_LocalRotation: {x: 0.4511033, y: 0.36207226, z: -0.4049873, w: 0.7080924}
+  m_LocalRotation: {x: 0.41746345, y: 0.40039346, z: -0.3410534, w: 0.7410074}
   m_LocalPosition: {x: 14.097718, y: 88.00359, z: -171.44038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 516491861}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 68.767006, y: 24.013, z: -42.974003}
+  m_LocalEulerAnglesHint: {x: 63.100002, y: 43.013, z: -22.227001}
 --- !u!1001 &1425788255
 PrefabInstance:
   m_ObjectHideFlags: 0
