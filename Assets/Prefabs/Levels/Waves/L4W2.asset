@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: L4W2
   m_EditorClassIdentifier: 
   initialDelayTime: 5
-  spawnTimeInterval: 2
+  spawnTimeInterval: 1
   spawnPositionRandom: 1
   enemies:
   - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}
@@ -23,3 +23,8 @@ MonoBehaviour:
   - {fileID: 1616464682912236, guid: dc5ec2d83527c0045bec17c3350c14a4, type: 3}
   - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}
   - {fileID: 1616464682912236, guid: dc5ec2d83527c0045bec17c3350c14a4, type: 3}
+  - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}
+  - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}
+  - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}
+  - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}
+  - {fileID: 1616464682912236, guid: 488a8335889899046ae15622fa665d47, type: 3}

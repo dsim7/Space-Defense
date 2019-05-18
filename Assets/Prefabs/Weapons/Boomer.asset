@@ -15,10 +15,10 @@ MonoBehaviour:
   available:
     _value: 0
   weaponName: Radiation Bomb
-  description: Detonates a radioactive bomb at the target location, dealing 2 damage
+  description: Detonates a radioactive bomb at the target location, dealing 4 damage
     to all enemies caught in the blast and irradiating them for 10 seconds. Irradiated
     enemies take double damage from all sources. 13 second cooldown.
-  cost: 1500
+  cost: 650
   icon: {fileID: 21300000, guid: 87a4068d64c895b4e9fe2078e8dd274e, type: 3}
   cooldown: 13
   hitEffects:

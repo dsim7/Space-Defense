@@ -20,11 +20,14 @@ public class MainMenuCamera : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         Debug.Log("Intro");
         Time.timeScale = 1;
 
         if (introSeen)
         {
+            blackMask.gameObject.SetActive(true);
+            blackMask.FadeInstant(1f);
             blackMask.FadeIn();
             title.gameObject.SetActive(false);
             introShip.SetTrigger("Intro");
@@ -32,6 +35,8 @@ public class MainMenuCamera : MonoBehaviour
         }
         else
         {
+            blackMask.gameObject.SetActive(true);
+            blackMask.FadeInstant(1f);
             introSeen = true;
             blackMask.FadeIn(() => { StartCoroutine(Intro()); });
         }

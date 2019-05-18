@@ -17,6 +17,7 @@ public class UpgradeInfoPanel : MonoBehaviour
 
     void Start()
     {
+        gameObject.SetActive(false);
         inspectedUpgrade.RegisterPostchangeEvent(UpdateInfo);
     }
 

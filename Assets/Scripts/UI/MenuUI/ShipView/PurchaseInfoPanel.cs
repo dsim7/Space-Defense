@@ -16,6 +16,7 @@ public class PurchaseInfoPanel : MonoBehaviour
 
     void Start()
     {
+        gameObject.SetActive(false);
         inspectedWeapon.RegisterPostchangeEvent(UpdateInfo);
     }
 

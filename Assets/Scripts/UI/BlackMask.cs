@@ -14,11 +14,6 @@ public class BlackMask : MonoBehaviour
 
     public float fadeRate = 0.5f;
 
-    void Awake()
-    {
-        cg.blocksRaycasts = true;
-    }
-
     void Update()
     {
         if (cg.alpha == alphaTarget)
@@ -69,6 +64,23 @@ public class BlackMask : MonoBehaviour
     public void FadeIn()
     {
         FadeIn(null);
+    }
+
+    public void FadeInstant(float amount)
+    {
+        alphaTarget = amount;
+        cg.alpha = amount;
+
+        if (amount != 0)
+        {
+            cg.blocksRaycasts = true;
+            Enable();
+        }
+        else
+        {
+            cg.blocksRaycasts = false;
+            Disable();
+        }
     }
 
     public void FadeIn(UnityAction then)

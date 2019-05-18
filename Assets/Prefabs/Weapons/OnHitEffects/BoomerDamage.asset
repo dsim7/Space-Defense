@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BoomerDamage
   m_EditorClassIdentifier: 
   damageAmount:
-  - 2
-  - 3
   - 4
-  - 5
+  - 6
+  - 9
+  - 11
   upgrade: {fileID: 11400000, guid: 56476f6cc149604459dddf7fc3a3b5f3, type: 2}

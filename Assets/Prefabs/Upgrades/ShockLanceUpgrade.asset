@@ -15,7 +15,7 @@ MonoBehaviour:
   level:
     _value: 0
   maxLevel: 3
-  levelCosts: 2c01000084030000d0070000
+  levelCosts: c800000058020000e8030000
   levelDescriptions:
   - Plus 2 Damage
   - Plus 3 Damage

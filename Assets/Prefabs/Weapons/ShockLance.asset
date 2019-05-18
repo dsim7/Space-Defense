@@ -16,10 +16,10 @@ MonoBehaviour:
     _value: 0
   weaponName: Shock Lance
   description: Fire a laser of high-powered ionizing energy, dealing 2 damage to all
-    enemies in a line and slowing them for 8 seconds. 8 second cooldown.
-  cost: 1500
+    enemies in a line and slowing them for 8 seconds. 4 second cooldown.
+  cost: 650
   icon: {fileID: 21300000, guid: 0238ee9c50cbe5b4b9724893f9dbad3e, type: 3}
-  cooldown: 8
+  cooldown: 4
   hitEffects:
   - {fileID: 11400000, guid: 19690017c9a1ec4499da6c7a743f3c9e, type: 2}
   - {fileID: 11400000, guid: 5071f16eff7ab8b4097b259f0cc85fb7, type: 2}

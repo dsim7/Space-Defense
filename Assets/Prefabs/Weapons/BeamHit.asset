@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4df86d33168a1646840cdbb2bf772b0, type: 3}
-  m_Name: Blaster
+  m_Name: BeamHit
   m_EditorClassIdentifier: 
   available:
     _value: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 21654719966fe044e9b82b31d9c96413, type: 3}
   cooldown: 0.3
   hitEffects:
-  - {fileID: 11400000, guid: 5cd9ce99a7c428845bc474f2424e9ccf, type: 2}
+  - {fileID: 11400000, guid: cd95a06999159c14b9b17ba1dd0b97e8, type: 2}
   upgrade: {fileID: 11400000, guid: a18d47027dc965e4889c376595f2e55e, type: 2}
   projectilePrefab: {fileID: 6764317752239477814, guid: 198cb60b40323644bad0809da36bdb06,
     type: 3}

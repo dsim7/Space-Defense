@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60a4941c54ce0d74483a871a764de557, type: 3}
-  m_Name: BlasterDamage
+  m_Script: {fileID: 11500000, guid: 9b6ebc396b2ac6846939e29cdb236c77, type: 3}
+  m_Name: BeamBlast
   m_EditorClassIdentifier: 
-  damageAmount:
-  - 2
-  - 2.5
-  - 3
-  - 3.5
-  upgrade: {fileID: 11400000, guid: a18d47027dc965e4889c376595f2e55e, type: 2}
+  weaponEffect:
+  - {fileID: 11400000, guid: 0c719d2d51385a64bbf46ec0998e14df, type: 2}
+  upgrade: {fileID: 0}

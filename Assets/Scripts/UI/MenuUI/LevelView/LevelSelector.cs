@@ -9,6 +9,11 @@ public class LevelSelector : MonoBehaviour
 
     public LevelVariable currentLevel;
 
+    void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void ClickOnPlanet()
     {
         RaycastHit hit;

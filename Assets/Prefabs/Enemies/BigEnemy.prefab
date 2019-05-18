@@ -220,9 +220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50e4b91044511d469e3ab33f36eee12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 24
-  health: 10
+  maxHealth: 40
+  health: 40
   spawner: {fileID: 0}
+  damageTakenCoef: 1
 --- !u!114 &2546550162372351138
 MonoBehaviour:
   m_ObjectHideFlags: 0

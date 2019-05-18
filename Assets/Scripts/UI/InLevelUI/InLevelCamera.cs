@@ -16,6 +16,7 @@ public class InLevelCamera : MonoBehaviour
     void Start()
     {
         blackMask.gameObject.SetActive(true);
+        blackMask.FadeInstant(1f);
         blackMask.FadeIn();
         StartCoroutine(Intro());
     }
